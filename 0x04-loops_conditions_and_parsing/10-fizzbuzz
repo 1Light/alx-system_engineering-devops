@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# displays numbers from 1 to 100.
+# displays Best School 10 times.
 
 COUNTER=1
 while [ $COUNTER -lt 101 ]
@@ -16,5 +16,5 @@ do
     else
         echo "$COUNTER"
     fi
-    ((COUNTER+=1))
+    let COUNTER+=1
 done
