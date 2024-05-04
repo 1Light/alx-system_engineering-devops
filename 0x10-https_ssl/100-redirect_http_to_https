@@ -33,19 +33,19 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend zealouscode-frontend
+frontend clickviral-frontend
         bind *:80
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http
-        default_backend zealouscode-backend
+        default_backend clickviral-backend
 
-frontend zealouscode-frontend-https
+frontend clickviral-frontend-https
         bind *:443 ssl crt /etc/haproxy/certs/zealouscode.tech.pem
         http-request set-header X-Forwarded-Proto https
-        default_backend zealouscode-backend
+        default_backend clickviral-backend
 
-backend zealouscode-backend
+backend clickviral-backend
         balance roundrobin
         server 278096-web-01 54.236.30.160:80 check
         server 278096-web-02 54.146.61.222:80 check
